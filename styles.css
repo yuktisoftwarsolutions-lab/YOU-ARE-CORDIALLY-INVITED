@@ -1,0 +1,1177 @@
+/* =========================================================================
+   TRADITIONAL RED & ANTIQUE GOLD INDIAN ENGAGEMENT INVITATION
+   Design Reference: Deep Crimson Textured Fabric, Antique Gold Kolam Borders,
+   White Jasmine Flowers & Natural Banana Leaf Brass Floral Plate
+   ========================================================================= */
+
+:root {
+  --crimson-primary: #8b0000;
+  --crimson-rich: #7a0303;
+  --crimson-deep: #5e0000;
+  --crimson-shadow: #3f0000;
+  --crimson-glass: rgba(88, 0, 0, 0.56);
+  --crimson-card: rgba(74, 0, 0, 0.68);
+
+  --gold-primary: #c9a45c;
+  --gold-bright: #e8cb84;
+  --gold-luminous: #f7e4ad;
+  --gold-deep: #99732c;
+
+  --ivory-accent: #fff5e6;
+  --ivory-soft: rgba(255, 245, 230, 0.86);
+  --banana-green: #2d5a27;
+
+  --font-display: 'Cinzel Decorative', 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-heading: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
+  --font-calligraphy: 'Great Vibes', 'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
+
+  --radius-panel: 14px;
+  --shadow-crimson: 0 22px 54px rgba(32, 0, 0, 0.55);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--crimson-deep);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family: var(--font-serif);
+  color: var(--ivory-accent);
+  /* Seamless deep crimson woven fabric extracted directly from reference image */
+  background-color: var(--crimson-primary);
+  background-image:
+    radial-gradient(circle at 50% 25%, rgba(162, 18, 18, 0.34) 0%, rgba(72, 0, 0, 0.58) 78%),
+    url("crimson-fabric-tile.webp");
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 256px 256px;
+  background-attachment: fixed, scroll;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.cover-locked {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: clamp(1.1rem, 4vw, 2.25rem);
+}
+
+/* =========================================================================
+   AMBIENT JASMINE PETALS & SOFT GOLDEN GLOW MOTES CANVAS
+   (z-index: 3 sits above background/corners and behind all foreground text)
+   ========================================================================= */
+#royal-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* =========================================================================
+   ROYAL SEAL COVER SCREEN (TAP TO OPEN INVITATION & START MUSIC)
+   ========================================================================= */
+.invite-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  cursor: pointer;
+  background-color: var(--crimson-deep);
+  background-image:
+    radial-gradient(circle at 50% 45%, rgba(162, 18, 18, 0.42) 0%, rgba(72, 0, 0, 0.72) 68%, rgba(36, 0, 0, 0.94) 100%),
+    url("crimson-fabric-tile.webp");
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 256px 256px;
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.invite-cover.is-opening {
+  opacity: 0;
+  transform: scale(1.03);
+  pointer-events: none;
+}
+
+.invite-cover__frame {
+  position: relative;
+  width: min(100%, 460px);
+  padding: clamp(2.5rem, 7vw, 3.6rem) clamp(1.4rem, 5vw, 2.6rem);
+  border-radius: var(--radius-panel);
+  border: 1px solid rgba(201, 164, 92, 0.55);
+  background: radial-gradient(circle at 50% 45%, rgba(105, 0, 0, 0.72) 0%, rgba(56, 0, 0, 0.88) 100%);
+  box-shadow: 0 26px 64px rgba(18, 0, 0, 0.72), inset 0 0 0 1px rgba(247, 228, 173, 0.14);
+  text-align: center;
+}
+
+.invite-cover__eyebrow {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-heading);
+  font-size: clamp(0.68rem, 2vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.invite-cover__names {
+  margin: 0;
+  font-family: var(--font-calligraphy);
+  font-size: clamp(2.45rem, 7vw, 3.45rem);
+  line-height: 1.22;
+  color: #fff3da;
+  text-shadow:
+    0 2px 14px rgba(247, 228, 173, 0.25),
+    0 4px 14px rgba(28, 0, 0, 0.68);
+}
+
+.invite-cover__divider {
+  margin: 1.15rem auto 1.6rem;
+}
+
+.invite-cover__btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.invite-cover__btn:focus-visible {
+  outline: 2px solid var(--gold-luminous);
+  outline-offset: 10px;
+  border-radius: 16px;
+}
+
+.invite-cover__seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(96px, 24vw, 118px);
+  height: clamp(96px, 24vw, 118px);
+  padding: 1.15rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(232, 203, 132, 0.8);
+  background: radial-gradient(circle at 35% 30%, rgba(145, 8, 8, 0.94), rgba(62, 0, 0, 0.98));
+  box-shadow: 0 10px 28px rgba(24, 0, 0, 0.65), 0 0 24px rgba(247, 228, 173, 0.24);
+  animation: coverSealPulse 2.4s ease-in-out infinite;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.invite-cover__btn:hover .invite-cover__seal {
+  transform: scale(1.04);
+  border-color: var(--gold-luminous);
+}
+
+.invite-cover__seal svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(24, 0, 0, 0.6));
+}
+
+.invite-cover__cta {
+  display: inline-block;
+  padding: 0.72rem 1.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 203, 132, 0.72);
+  background: linear-gradient(135deg, #c9a45c 0%, #f1d691 52%, #b58c40 100%);
+  color: #360000;
+  font-family: var(--font-heading);
+  font-size: clamp(0.72rem, 2.3vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(26, 0, 0, 0.45);
+}
+
+@keyframes coverSealPulse {
+  0%, 100% {
+    box-shadow: 0 10px 28px rgba(24, 0, 0, 0.65), 0 0 18px rgba(247, 228, 173, 0.22);
+  }
+  50% {
+    box-shadow: 0 12px 34px rgba(24, 0, 0, 0.7), 0 0 32px rgba(247, 228, 173, 0.46);
+  }
+}
+
+/* =========================================================================
+   FIRST SCREEN: REFERENCE RED SILK HERO & 5-STEP CINEMATIC ENTRANCE
+   ========================================================================= */
+.hero-stage {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(3.2rem, 7.5vh, 4.7rem) 0 clamp(3.6rem, 8.5vh, 5.2rem);
+  overflow: hidden;
+  /* Preserves exact vignette warmth of the uploaded reference photo */
+  background:
+    radial-gradient(circle at 50% 44%, rgba(168, 22, 20, 0.28) 0%, rgba(96, 0, 0, 0.24) 60%, rgba(56, 0, 0, 0.55) 100%);
+}
+
+/* Reference Corner Photographic Florals (Unstretched & Uncropped) */
+.hero-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-corner--tl {
+  top: 0;
+  left: 0;
+  width: clamp(118px, 24vw, 220px);
+  height: auto;
+  transform: translate(-10px, -10px);
+}
+
+.hero-corner--br {
+  bottom: 0;
+  right: 0;
+  width: clamp(168px, 34vw, 330px);
+  height: auto;
+  transform: translate(12px, 12px);
+}
+
+/* Reference Antique Gold Kolam Side Ornaments */
+.kolam-border {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  width: clamp(64px, 10vw, 118px);
+  opacity: 0;
+  filter: drop-shadow(0 2px 8px rgba(40, 0, 0, 0.45));
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.kolam-border--tr {
+  top: clamp(12px, 2.5vh, 32px);
+  right: clamp(2px, 1.5vw, 22px);
+  transform: translateY(-10px);
+}
+
+.kolam-border--bl {
+  bottom: clamp(54px, 10vh, 90px);
+  left: clamp(2px, 1.5vw, 22px);
+  transform: translateY(10px);
+}
+
+/* Soft Golden Light Effects */
+.hero-golden-glow {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  width: min(88vw, 660px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) scale(0.86);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(247, 228, 173, 0.16) 0%, rgba(201, 164, 92, 0.08) 42%, transparent 72%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1.4s ease, transform 1.6s ease;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Clean Spacious Center Area for Invitation Content */
+.hero-centerpiece {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+  padding-inline: clamp(0.5rem, 3vw, 2rem);
+}
+
+.hero-blessing-block {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-ganesha-emblem {
+  width: clamp(72px, 11vw, 96px);
+  height: auto;
+  margin: 0 auto 0.45rem;
+  filter: drop-shadow(0 6px 18px rgba(38, 0, 0, 0.5));
+}
+
+.hero-blessing-text {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.12rem, 2.8vw, 1.42rem);
+  color: var(--ivory-accent);
+  letter-spacing: 0.05em;
+}
+
+.hero-cordial-text {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-heading);
+  font-size: clamp(0.76rem, 2.1vw, 0.94rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--gold-bright);
+}
+
+.hero-names-block {
+  margin-top: 1.05rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-kicker {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-heading);
+  font-size: clamp(0.74rem, 2vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ivory-soft);
+}
+
+.couple-names {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.72rem;
+}
+
+  .couple-family-member {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .couple-family-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+
+  .couple-family-role::before,
+  .couple-family-role::after {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 164, 92, 0.8), transparent);
+  }
+
+  .couple-family-name {
+    display: block;
+    padding-inline: 0.25rem;
+    font-family: var(--font-calligraphy);
+    font-weight: 400;
+    font-size: clamp(2.65rem, 6.8vw, 4.1rem);
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: #fff3da;
+    text-shadow:
+      0 2px 14px rgba(247, 228, 173, 0.24),
+      0 3px 12px rgba(34, 0, 0, 0.65);
+  }
+
+    .couple-family-parent {
+      margin-top: 0.16rem;
+      font-family: var(--font-serif);
+      font-size: clamp(0.95rem, 2.1vw, 1.12rem);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold-bright);
+      text-shadow: 0 2px 8px rgba(36, 0, 0, 0.5);
+    }
+
+    .couple-family-ampersand-row {
+      width: min(76%, 290px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .couple-family-ampersand-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 164, 92, 0.78), transparent);
+    }
+
+    .couple-family-ampersand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 164, 92, 0.55);
+      background: radial-gradient(circle, rgba(139, 0, 0, 0.72), rgba(68, 0, 0, 0.9));
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 600;
+      font-size: clamp(1.32rem, 3vw, 1.65rem);
+      line-height: 1;
+      color: var(--gold-luminous);
+      box-shadow: 0 4px 16px rgba(32, 0, 0, 0.48);
+    }
+
+    .hero-reveal-item {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .hero-summary {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.22rem;
+      font-size: clamp(1.08rem, 2.6vw, 1.32rem);
+      font-weight: 500;
+      color: var(--ivory-accent);
+      text-shadow: 0 2px 8px rgba(40, 0, 0, 0.45);
+    }
+
+    .hero-summary__line,
+    .hero-summary__venue {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem 0.75rem;
+    }
+
+    .hero-dot {
+      color: var(--gold-bright);
+    }
+
+    .hero-actions {
+      margin-top: 1.55rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    /* =========================================================================
+   5-STEP CINEMATIC ENTRANCE STATES
+   ========================================================================= */
+    /* Step 2: Golden ornaments, Kolam borders & corner florals fade in */
+    body.entrance-stage-1 .hero-corner,
+    body.entrance-stage-1 .kolam-border {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    /* Step 4: Soft golden light effects + Lord Ganesha & Divine Blessings appear */
+    body.entrance-stage-3 .hero-golden-glow {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    body.entrance-stage-3 .hero-blessing-block {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Step 5: Couple names & details emerge prominently in the center */
+    body.entrance-stage-4 .hero-names-block,
+    body.entrance-stage-4 .hero-reveal-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================================
+   SHARED ORNAMENTS, DIVIDERS & ROYAL BUTTONS
+   ========================================================================= */
+    .kolam-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      margin: 1.25rem auto;
+      width: min(82%, 340px);
+    }
+
+    .kolam-divider--compact {
+      margin: 0.95rem auto 1.35rem;
+      width: min(70%, 260px);
+    }
+
+    .kolam-divider__line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 164, 92, 0.85), transparent);
+    }
+
+    .kolam-divider__diamond {
+      width: 9px;
+      height: 9px;
+      background: var(--gold-bright);
+      transform: rotate(45deg);
+      box-shadow: 0 0 8px rgba(247, 228, 173, 0.5);
+    }
+
+    .btn-royal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 46px;
+      padding: 0.78rem 1.7rem;
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn-royal--gold {
+      border: 1px solid var(--gold-luminous);
+      background: linear-gradient(135deg, #c9a45c 0%, #ebd292 50%, #b58d40 100%);
+      color: #460000;
+      box-shadow: 0 8px 24px rgba(36, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-royal--gold:hover,
+    .btn-royal--gold:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(201, 164, 92, 0.42);
+      outline: none;
+    }
+
+    .btn-royal--outline {
+      border: 1px solid rgba(201, 164, 92, 0.75);
+      background: rgba(75, 0, 0, 0.52);
+      color: var(--ivory-accent);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-royal--outline:hover,
+    .btn-royal--outline:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--gold-luminous);
+      background: rgba(105, 0, 0, 0.72);
+      outline: none;
+    }
+
+    .btn-royal--large {
+      padding: 0.9rem clamp(1.25rem, 4vw, 2.1rem);
+      font-size: clamp(0.73rem, 2.7vw, 0.84rem);
+      white-space: nowrap;
+    }
+
+    /* =========================================================================
+   CONSISTENT RED & ANTIQUE GOLD SECTIONS BELOW THE FOLD
+   ========================================================================= */
+    .royal-section {
+      position: relative;
+      z-index: 10;
+      padding: clamp(3rem, 7vw, 5.2rem) 0;
+    }
+
+    .crimson-panel {
+      position: relative;
+      max-width: 780px;
+      margin-inline: auto;
+      padding: clamp(2rem, 5vw, 3.4rem) clamp(1.35rem, 4.5vw, 3rem);
+      text-align: center;
+      border-radius: var(--radius-panel);
+      border: 1px solid rgba(201, 164, 92, 0.56);
+      background: linear-gradient(168deg, rgba(112, 0, 0, 0.68) 0%, rgba(74, 0, 0, 0.76) 100%);
+      box-shadow:
+        var(--shadow-crimson),
+        inset 0 0 0 6px rgba(64, 0, 0, 0.45),
+        inset 0 0 0 7px rgba(201, 164, 92, 0.22);
+      backdrop-filter: blur(3px);
+    }
+
+    /* Delicate Antique Gold Kolam Corner Brackets matching Reference Style */
+    .panel-corner {
+      position: absolute;
+      width: clamp(32px, 6vw, 48px);
+      height: clamp(32px, 6vw, 48px);
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' fill='none'%3E%3Cpath d='M6 52 L6 12 C6 8 8 6 12 6 L52 6' stroke='%23C9A45C' stroke-width='1.8'/%3E%3Cpolygon points='14,14 19,19 14,24 9,19' fill='%23E8CB84' opacity='0.85'/%3E%3Ccircle cx='34' cy='6' r='2' fill='%23E8CB84'/%3E%3Ccircle cx='6' cy='34' r='2' fill='%23E8CB84'/%3E%3C/svg%3E");
+    }
+
+    .panel-corner--tl {
+      top: 10px;
+      left: 10px;
+    }
+
+    .panel-corner--tr {
+      top: 10px;
+      right: 10px;
+      transform: scaleX(-1);
+    }
+
+    .panel-corner--bl {
+      bottom: 10px;
+      left: 10px;
+      transform: scaleY(-1);
+    }
+
+    .panel-corner--br {
+      bottom: 10px;
+      right: 10px;
+      transform: scale(-1);
+    }
+
+    .section-crest {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+    }
+
+    .section-eyebrow {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.42rem, 3.8vw, 2.25rem);
+      line-height: 1.28;
+      letter-spacing: 0.05em;
+      background: linear-gradient(180deg, #fff9e8 0%, #ebd08c 70%, #c9a45c 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .invitation-copy {
+      margin-top: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.05rem;
+      font-size: clamp(1.16rem, 2.5vw, 1.38rem);
+      line-height: 1.75;
+      color: var(--ivory-accent);
+    }
+
+    .invitation-copy p {
+      margin: 0;
+    }
+
+    .invitation-copy__closing {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--gold-luminous);
+    }
+
+    .ivory-monogram {
+      margin: 1.65rem auto 0;
+      width: min(72%, 250px);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .ivory-monogram__line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 164, 92, 0.8), transparent);
+    }
+
+    .ivory-monogram__logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: clamp(64px, 12vw, 80px);
+    }
+
+    .ivory-monogram__logo svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 3px 10px rgba(32, 0, 0, 0.55));
+    }
+
+    /* =========================================================================
+   EVENT CARDS & CLICKABLE LOCATION TABLE
+   ========================================================================= */
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1rem, 2.6vw, 1.55rem);
+      max-width: 780px;
+      margin: 0 auto clamp(2.6rem, 6vw, 3.8rem);
+    }
+
+    .event-card {
+      position: relative;
+      padding: 2rem 1.35rem 1.85rem;
+      text-align: center;
+      border-radius: var(--radius-panel);
+      border: 1px solid rgba(201, 164, 92, 0.5);
+      background: linear-gradient(170deg, rgba(112, 0, 0, 0.68), rgba(70, 0, 0, 0.78));
+      box-shadow: 0 14px 34px rgba(32, 0, 0, 0.45), inset 0 0 0 4px rgba(64, 0, 0, 0.35);
+      transition: transform 0.32s ease, border-color 0.32s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-luminous);
+    }
+
+    .event-card__icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 0.85rem;
+    }
+
+    .event-card__label {
+      margin: 0 0 0.3rem;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+    }
+
+    .event-card__value {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(1.22rem, 2.4vw, 1.44rem);
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--ivory-accent);
+    }
+
+    .location-panel__header {
+      text-align: center;
+      margin-bottom: 1.6rem;
+    }
+
+    .location-panel__title {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.22rem, 3.2vw, 1.68rem);
+      color: var(--gold-luminous);
+      letter-spacing: 0.05em;
+    }
+
+    .location-panel__subtitle {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--ivory-soft);
+    }
+
+    .table-wrap {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(201, 164, 92, 0.6);
+    }
+
+    .royal-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      background: rgba(68, 0, 0, 0.68);
+    }
+
+    .royal-table thead th {
+      padding: 0.95rem 1.15rem;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #460000;
+      background: linear-gradient(90deg, #c9a45c, #ebd292, #c9a45c);
+    }
+
+    .royal-table tbody th,
+    .royal-table tbody td {
+      padding: 1rem 1.15rem;
+      border-top: 1px solid rgba(201, 164, 92, 0.28);
+      font-size: clamp(1.04rem, 2.6vw, 1.22rem);
+      vertical-align: middle;
+    }
+
+    .royal-table tbody th {
+      width: 34%;
+      font-family: var(--font-heading);
+      font-size: clamp(0.75rem, 2.2vw, 0.86rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      background: rgba(98, 0, 0, 0.56);
+    }
+
+    .royal-table tbody td {
+      color: var(--ivory-accent);
+      font-weight: 500;
+    }
+
+    .table-map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0;
+      color: var(--gold-luminous);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(247, 228, 173, 0.7);
+      transition: color 0.2s ease;
+    }
+
+    .table-map-link svg {
+      flex-shrink: 0;
+    }
+
+    .table-map-link:hover,
+    .table-map-link:focus-visible {
+      color: var(--ivory-accent);
+      outline: none;
+    }
+
+    .location-panel__cta {
+      margin-top: 1.8rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* =========================================================================
+   COUNTDOWN SECTION (COHESIVE RED & GOLD)
+   ========================================================================= */
+    .countdown-grid {
+      margin: 1.9rem auto 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(0.75rem, 2.5vw, 1.25rem);
+      max-width: 600px;
+    }
+
+    .countdown-cell {
+      padding: clamp(1rem, 3vw, 1.45rem) 0.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(201, 164, 92, 0.65);
+      background: linear-gradient(160deg, rgba(124, 2, 2, 0.82), rgba(66, 0, 0, 0.92));
+      box-shadow: 0 10px 24px rgba(32, 0, 0, 0.35), inset 0 1px 0 rgba(255, 245, 230, 0.16);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.28rem;
+    }
+
+    .countdown-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 5.2vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+      background: linear-gradient(180deg, #fff9e8 0%, #ebd08c 78%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .countdown-label {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ivory-accent);
+    }
+
+    .countdown-status {
+      margin: 0;
+      font-size: 1.04rem;
+      font-style: italic;
+      color: var(--ivory-soft);
+    }
+
+    /* =========================================================================
+   FINAL CLOSING SECTION
+   ========================================================================= */
+    .section-closing {
+      position: relative;
+      padding-bottom: clamp(4.8rem, 10vw, 6.8rem);
+      overflow: hidden;
+    }
+
+    .closing-corner-br {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: clamp(140px, 28vw, 270px);
+      height: auto;
+      pointer-events: none;
+      opacity: 0.92;
+      z-index: 1;
+    }
+
+    .closing-frame {
+      position: relative;
+      z-index: 3;
+    }
+
+    .closing-diyas {
+      display: flex;
+      justify-content: center;
+      gap: 1.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .brass-diya-svg {
+      width: 66px;
+      filter: drop-shadow(0 0 16px rgba(242, 148, 34, 0.36));
+    }
+
+    .diya-flame-group {
+      transform-box: fill-box;
+      transform-origin: 50% 85%;
+      animation: flameFlicker 1.7s ease-in-out infinite alternate;
+    }
+
+    .closing-headline {
+      margin: 0 0 0.5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.42rem, 4.2vw, 2.28rem);
+      line-height: 1.3;
+      letter-spacing: 0.04em;
+      background: linear-gradient(180deg, #fff9e8 0%, #ebd08c 68%, #c9a45c 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .closing-subline {
+      margin: 0;
+      font-style: italic;
+      font-size: clamp(1.22rem, 3.2vw, 1.54rem);
+      color: var(--ivory-accent);
+    }
+
+    .closing-signoff {
+      margin: 0.35rem 0 0.65rem;
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+    }
+
+    .closing-couple {
+      margin: 0;
+      font-size: clamp(1.16rem, 2.6vw, 1.38rem);
+      font-weight: 600;
+      color: var(--ivory-accent);
+    }
+
+    .closing-meta {
+      margin: 0.25rem 0 0;
+      font-size: 1rem;
+      color: var(--ivory-soft);
+    }
+
+    /* =========================================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================================= */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================= */
+    @keyframes flameFlicker {
+      0% {
+        transform: scale(1, 1) rotate(-1.4deg);
+        opacity: 0.94;
+      }
+
+      50% {
+        transform: scale(1.04, 1.07) rotate(1.4deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.97, 1.02) rotate(-0.8deg);
+        opacity: 0.92;
+      }
+    }
+
+    /* =========================================================================
+   RESPONSIVE BREAKPOINTS (MOBILE-FIRST READABILITY & CLEARANCE)
+   ========================================================================= */
+    @media (max-width: 640px) {
+      .event-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-stage {
+        padding-top: 5.1rem;
+        padding-bottom: 8.8rem;
+      }
+
+      .hero-corner--tl {
+        width: 106px;
+      }
+
+      .hero-corner--br {
+        width: 148px;
+      }
+
+      .kolam-border--tr {
+        width: 56px;
+        top: 10px;
+        right: 4px;
+      }
+
+      .kolam-border--bl {
+        width: 56px;
+        bottom: 66px;
+        left: 4px;
+      }
+
+      .hero-summary__line {
+        flex-direction: column;
+        gap: 0.18rem;
+      }
+
+      .hero-dot {
+        display: none;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .countdown-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 340px;
+      }
+
+      .royal-table thead th,
+      .royal-table tbody th,
+      .royal-table tbody td {
+        padding: 0.85rem 0.68rem;
+      }
+
+      .royal-table tbody th {
+        width: 31%;
+        font-size: 0.72rem;
+      }
+
+      .royal-table tbody td {
+        font-size: 0.96rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .diya-flame-group,
+      .invite-cover__seal {
+        animation: none !important;
+      }
+
+      .invite-cover {
+        transition: none !important;
+      }
+
+      .hero-corner,
+      .kolam-border,
+      .hero-golden-glow,
+      .hero-blessing-block,
+      .hero-names-block,
+      .hero-reveal-item,
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
